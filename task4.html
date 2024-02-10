@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changing Button</title>
+    <style>
+        #colorButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="colorButton" onclick="changeColor()">Click me</button>
+
+    <script>
+        function changeColor() {
+            var button = document.getElementById("colorButton");
+            button.style.backgroundColor = "rgb(" + getRandomColor() + ")";
+        }
+
+        function getRandomColor() {
+            var color = [];
+            for (var i = 0; i < 3; i++) {
+                color.push(Math.floor(Math.random() * 256));
+            }
+            return color.join(",");
+        }
+    </script>
+</body>
+</html>
